@@ -4,6 +4,9 @@
 
 #include "mulle-time.h"
 
+#include <time.h>
+
+// timespec as used by nanosleep
 
 static inline mulle_time_comparison_t   timespec_compare( struct timespec a,
                                                           struct timespec b)

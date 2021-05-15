@@ -3,7 +3,12 @@
 
 #include "mulle-time.h"
 
+// add various platform #ifdefs here
+#include <sys/time.h>
 
+//
+// struct timeval is what gettimeofday returns
+//
 static inline mulle_time_comparison_t   timeval_compare( struct timeval a,
                                                          struct timeval b)
 {

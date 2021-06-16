@@ -1,15 +1,24 @@
 # 🕕 mulle-time
 
-#### 🕕 mulle-time simple arithmetic with timespec and timeval
+#### Simple arithmetic with timespec and timeval
 
-This is a header only library.
+Defines `timespec_add`, `timespec_sub` and `timespec_compare` and their
+timeval counterparts. `struct timespec` is more desirable, where available,
+for improved precision in its representation.
+
+This library defines `mulle_timeinterval_t` which will be used as 
+`NSTimeInterval` in mulle-objc.
+
+On Linux this library implicitly defines `_GNU_SOURCE` to get the 
+`CLOCK_REALTIME` constant.
+
 
 ## Add
 
 Use [mulle-sde](//github.com/mulle-sde) to add mulle-time to your project:
 
 ``` console
-mulle-sde dependency add --c --github <|GITHUB_USER|> mulle-time
+mulle-sde dependency add --c --github mulle-core mulle-time
 ```
 
 ## Install
@@ -21,17 +30,11 @@ and all its dependencies:
 
 ```
 mulle-sde install --prefix /usr/local \
-   https://github.com/<|GITHUB_USER|>/mulle-time/archive/latest.tar.gz
+   https://github.com/mulle-core/mulle-time/archive/latest.tar.gz
 ```
 
 ### Manual Installation
 
-
-Install the requirements:
-
-Requirements                                      | Description
---------------------------------------------------|-----------------------
-[some-requirement](//github.com/some/requirement) | Some requirement
 
 Install into `/usr/local`:
 

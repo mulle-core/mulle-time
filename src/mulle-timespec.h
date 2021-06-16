@@ -1,10 +1,11 @@
-
 #ifndef mulle_timespec_h__
 #define mulle_timespec_h__
 
-#include "mulle-time.h"
+#include "mulle-timetype.h"
 
-#include <time.h>
+
+mulle_timeinterval_t   mulle_timeinterval_now( void);
+
 
 // timespec as used by nanosleep
 
@@ -23,10 +24,6 @@ static inline mulle_time_comparison_t   timespec_compare( struct timespec a,
 }
 
 
-#ifndef NS_IN_S
-# define NS_IN_S (1000*1000*1000)
-#endif
-
 static inline struct timespec   timespec_add( struct timespec a,
                                               struct timespec b)
 {
@@ -34,9 +31,9 @@ static inline struct timespec   timespec_add( struct timespec a,
    int               carry;
 
    result.tv_nsec = a.tv_nsec + b.tv_nsec;
-   carry = result.tv_nsec >= NS_IN_S;
+   carry = result.tv_nsec >= (1000L*1000*1000);
    if( carry)
-      result.tv_nsec -= NS_IN_S;
+      result.tv_nsec -= (1000L*1000*1000);
    result.tv_sec = a.tv_sec + b.tv_sec + carry;
    return( result);
 }
@@ -51,7 +48,7 @@ static inline struct timespec   timespec_sub( struct timespec a,
    result.tv_nsec = a.tv_nsec - b.tv_nsec;
    carry = result.tv_nsec < 0;
    if( carry)
-      result.tv_nsec += NS_IN_S;
+      result.tv_nsec += (1000L*1000*1000);
    result.tv_sec = a.tv_sec - b.tv_sec - carry;
    return( result);
 }

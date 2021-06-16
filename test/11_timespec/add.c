@@ -1,3 +1,7 @@
+#ifdef __linux__
+# define _POSIX_C_SOURCE
+#endif
+
 #include <mulle-time/mulle-time.h>
 
 #include <stdio.h>

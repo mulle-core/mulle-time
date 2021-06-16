@@ -8,13 +8,20 @@ if( MULLE_TRACE_INCLUDE)
    MESSAGE( STATUS "# Include \"${CMAKE_CURRENT_LIST_FILE}\"" )
 endif()
 
+#
+# contents are derived from the file locations
+
 set( INCLUDE_DIRS
 src
 )
 
+#
+# contents selected with patternfile ??-header--public-headers
+#
 set( PUBLIC_HEADERS
 src/mulle-time.h
 src/mulle-timespec.h
+src/mulle-timetype.h
 src/mulle-timeval.h
 )
 

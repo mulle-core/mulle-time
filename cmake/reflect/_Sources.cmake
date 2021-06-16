@@ -8,4 +8,9 @@ if( MULLE_TRACE_INCLUDE)
    MESSAGE( STATUS "# Include \"${CMAKE_CURRENT_LIST_FILE}\"" )
 endif()
 
-# Source generation disabled by MULLE_MATCH_TO_CMAKE_SOURCES_FILE=NONE
+#
+# contents selected with patternfile ??-source--sources
+#
+set( SOURCES
+src/mulle-timespec.c
+)

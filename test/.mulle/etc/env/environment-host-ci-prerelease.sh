@@ -149,9 +149,9 @@ export MULLE_TIME_NODETYPE="git"
 
 
 #
-# mulle-time url: ${MULLE_TIME_URL:-https://github.com/MulleUI/mulle-time/archive/${MULLE_TAG}.tar.gz}
+# mulle-time url: ${MULLE_TIME_URL:-https://github.com/mulle-core/mulle-time/archive/${MULLE_TAG}.tar.gz}
 #
-export MULLE_TIME_URL="https://github.com/MulleUI/mulle-time.git"
+export MULLE_TIME_URL="https://github.com/mulle-core/mulle-time.git"
 
 
 #

@@ -18,6 +18,7 @@ static inline mulle_timeinterval_t   mulle_time_now( void)
 }
 #endif
 
+
 //
 // struct timeval is what gettimeofday returns
 //

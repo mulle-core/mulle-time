@@ -1,6 +1,6 @@
 # 🕕 mulle-time
 
-#### Simple arithmetic with timespec and timeval
+#### Simple time types with arithmetic on timespec and timeval
 
 Defines `timespec_add`, `timespec_sub` and `timespec_compare` and their
 timeval counterparts. `struct timespec` is more desirable, where available,
@@ -10,7 +10,26 @@ This library defines `mulle_timeinterval_t` which will be used as
 `NSTimeInterval` in mulle-objc.
 
 On Linux this library implicitly defines `_GNU_SOURCE` to get the 
-`CLOCK_REALTIME` constant.
+`CLOCK_REALTIME` and `CLOCK_MONOTONIC` constants.
+
+This library also defines types based on `mulle_timeinterval_t`.
+
+`mulle_relativetime_t` is to be used for animations and elapsed times
+`mulle_absolutetime_t` is to be used for keeping date/time based timestamps.
+
+These added types are mostly there to make code more readable, so that you
+immediately know if a `mulle_timeinterval_t` contains, say a delay of 0.1s
+or the date of now + 0.1s.
+
+
+Datatype                  | Description
+--------------------------|---------------------------
+mulle_timeinterval_t      | absolute or relative time stored as a `double`
+mulle_absolutetime_t      | a timestamp like today
+mulle_absolutetimerange   | an absolute time range, like today until tomorrow
+mulle_relativetime_t      | a quantity of time like 10s
+mulle_relativetimerange   | a time range of relative times, like delay, duration
+
 
 
 ## Add

@@ -1,6 +1,13 @@
 #ifndef mulle_timetype_h__
 #define mulle_timetype_h__
 
+#include <mulle-c11/mulle-c11.h>
+
+#ifndef MULLE_TIME_EXTERN_GLOBAL
+# define MULLE_TIME_EXTERN_GLOBAL MULLE_C_EXTERN_GLOBAL
+#endif
+
+
 typedef enum
 {
    MulleTimeAscending  = -1,
@@ -18,6 +25,22 @@ typedef enum
 
 // will be typedef to NSTimeInterval
 typedef double   mulle_timeinterval_t;
+
+// can produce absolute time or relative
+static inline mulle_timeinterval_t
+   mulle_timeinterval_add( mulle_timeinterval_t a, mulle_timeinterval_t b)
+{
+   return( a + b);
+}
+
+
+// can produce absolute time or relative
+static inline mulle_timeinterval_t
+   mulle_timeinterval_subtract( mulle_timeinterval_t a, mulle_timeinterval_t b)
+{
+   return( a - b);
+}
+
 
 // timespec is preferable, timeval is like a fallback for unix
 // it's usually not a problem to comment it out for platforms

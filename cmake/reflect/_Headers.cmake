@@ -18,6 +18,8 @@ src
 # contents selected with patternfile ??-header--public-headers
 #
 set( PUBLIC_HEADERS
+src/mulle-absolutetime.h
+src/mulle-relativetime.h
 src/mulle-time.h
 src/mulle-timespec.h
 src/mulle-timetype.h

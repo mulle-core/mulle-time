@@ -26,6 +26,20 @@ mulle_timeinterval_t   mulle_timeinterval_now( void)
    return( (mulle_timeinterval_t) wintime / 10000000.0);
 }
 
+
+mulle_timeinterval_t   mulle_timeinterval_now_monotonic( void)
+{
+   __int64   wintime;
+   static __int64   old_wintime;
+
+   GetSystemTimeAsFileTime((FILETIME*)&wintime);
+   // TODO: needs to be atomic probably
+   if( ! old_wintime)
+      old_wintime = wintime;
+
+   return( (mulle_timeinterval_t) (wintime - old_wintime) / 10000000.0);
+}
+
 #else
 
 mulle_timeinterval_t   mulle_timeinterval_now( void)
@@ -35,5 +49,15 @@ mulle_timeinterval_t   mulle_timeinterval_now( void)
    clock_gettime( CLOCK_REALTIME, &now);
    return( now.tv_sec + now.tv_nsec / (1000.0*1000*1000));
 }
+
+
+mulle_timeinterval_t   mulle_timeinterval_now_monotonic( void)
+{
+   struct timespec   now;
+
+   clock_gettime( CLOCK_MONOTONIC, &now);
+   return( now.tv_sec + now.tv_nsec / (1000.0*1000*1000));
+}
+
 #endif
 

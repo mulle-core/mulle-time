@@ -6,9 +6,8 @@
 
 
 // It's simple. mulle_absolutetime_t is a FP number containing seconds as a timestamp
-// relative to a reference date which is defined in mulle-time.h. But still an
-// absolute time. mulle_relativetime_t is a time duration, also in FP seconds. So
-// 0.25 is a quarter second.
+// relative to the start of program execution and duration. It should not
+// "jump" if the computer is put into sleep mode.
 //
 // Arithmetic on mulle_absolutetime_t and mulle_relativetime_t has six useful
 // operations
@@ -28,8 +27,9 @@ typedef mulle_timeinterval_t   mulle_absolutetime_t;
 
 static inline mulle_absolutetime_t   mulle_absolutetime_now( void)
 {
-   return( (mulle_absolutetime_t) mulle_timeinterval_now());
+   return( (mulle_absolutetime_t) mulle_timeinterval_now_monotonic());
 }
+
 
 
 static inline void

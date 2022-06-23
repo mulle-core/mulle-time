@@ -5,12 +5,12 @@
 
 
 // use this for getting "date" "time"
-MULLE_TIME_EXTERN_GLOBAL
+MULLE_TIME_GLOBAL
 mulle_timeinterval_t   mulle_timeinterval_now( void);
 
 // use this for animations, timewatch etc.
 // https://stackoverflow.com/questions/3523442/difference-between-clock-realtime-and-clock-monotonic
-MULLE_TIME_EXTERN_GLOBAL
+MULLE_TIME_GLOBAL
 mulle_timeinterval_t   mulle_timeinterval_now_monotonic( void);
 
 

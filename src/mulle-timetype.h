@@ -3,8 +3,14 @@
 
 #include <mulle-c11/mulle-c11.h>
 
-#ifndef MULLE_TIME_EXTERN_GLOBAL
-# define MULLE_TIME_EXTERN_GLOBAL MULLE_C_EXTERN_GLOBAL
+#ifdef MULLE_TIME_BUILD
+# define MULLE_TIME_GLOBAL    MULLE_C_GLOBAL
+#else
+# if defined( MULLE_TIME_INCLUDE_DYNAMIC) || (defined( MULLE_INCLUDE_DYNAMIC) && ! defined( MULLE_TIME_INCLUDE_STATIC))
+#  define MULLE_TIME_GLOBAL   MULLE_C_EXTERN_GLOBAL
+# else
+#  define MULLE_TIME_GLOBAL   extern
+# endif
 #endif
 
 
@@ -40,6 +46,59 @@ static inline mulle_timeinterval_t
 {
    return( a - b);
 }
+
+
+// don't want fmod/-lm in this library, so use fmod adapted from
+// https://stackoverflow.com/questions/26342823/implementation-of-fmod-function
+static mulle_timeinterval_t   mulle_timeinterval_mod( mulle_timeinterval_t value,
+                                                      mulle_timeinterval_t m)
+{
+   return( value - (double) (long long) (value / m) * m);
+}
+
+
+//
+// this returns either the next lowest or the next highest timeinterval that
+// is evenly divisibly by rate. "snaps to reate"
+// A rate of 0.3 produces the following valid value sequence
+// 0, 0.3, 0.6, 0.9, 1.2, ..., INFINITY
+// Given a 1.0 for value, this will return 0.9 given a 1.1 it will return
+// 1.2.
+//
+//
+static mulle_timeinterval_t   mulle_timeinterval_quantize( mulle_timeinterval_t value,
+                                                           mulle_timeinterval_t rate)
+{
+   mulle_timeinterval_t   loss;
+   mulle_timeinterval_t   quantized;
+
+   loss      = mulle_timeinterval_mod( value, rate);
+   quantized = value - loss;        // quantize to lower
+   if( loss >= rate / 2)            // or quantize to higher
+      quantized += rate;
+
+   // quantized may have encurred a small error here due to fmod
+   return( quantized);
+}
+
+
+// no helper functions yet
+struct mulle_timeintervalrange
+{
+   mulle_timeinterval_t   start;
+   mulle_timeinterval_t   end;
+};
+
+
+static inline struct mulle_timeintervalrange
+   mulle_timeintervalrange_make( mulle_timeinterval_t start,
+                                 mulle_timeinterval_t end)
+{
+    struct mulle_timeintervalrange result = { start, end };
+
+    return( result);
+}
+
 
 
 // timespec is preferable, timeval is like a fallback for unix

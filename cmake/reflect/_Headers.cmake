@@ -19,6 +19,7 @@ src
 #
 set( PUBLIC_HEADERS
 src/mulle-absolutetime.h
+src/mulle-calendartime.h
 src/mulle-relativetime.h
 src/mulle-time.h
 src/mulle-timespec.h

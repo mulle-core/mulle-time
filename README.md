@@ -45,7 +45,7 @@ Datatype                           | Description
 
 Use [mulle-sde](//github.com/mulle-sde) to add mulle-time to your project:
 
-``` console
+``` sh
 mulle-sde dependency add --c --github mulle-core mulle-time
 ```
 
@@ -56,7 +56,7 @@ mulle-sde dependency add --c --github mulle-core mulle-time
 Use [mulle-sde](//github.com/mulle-sde) to build and install mulle-time
 and all its dependencies:
 
-```
+``` sh
 mulle-sde install --prefix /usr/local \
    //github.com/mulle-core/mulle-time/archive/latest.tar.gz
 ```
@@ -66,7 +66,7 @@ mulle-sde install --prefix /usr/local \
 
 Install into `/usr/local`:
 
-```
+``` sh
 mkdir build 2> /dev/null
 (
    cd build ;

@@ -27,6 +27,7 @@ static inline mulle_relativetime_t
 }
 
 
+
 struct mulle_relativetimerange
 {
    mulle_relativetime_t   delay;
@@ -54,5 +55,7 @@ static inline void
       p->duration = duration;
    }
 }
+
+
 
 #endif

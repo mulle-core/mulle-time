@@ -66,8 +66,9 @@ static mulle_timeinterval_t   mulle_timeinterval_mod( mulle_timeinterval_t value
 // 1.2.
 //
 //
-static mulle_timeinterval_t   mulle_timeinterval_quantize( mulle_timeinterval_t value,
-                                                           mulle_timeinterval_t rate)
+static inline mulle_timeinterval_t
+   mulle_timeinterval_quantize( mulle_timeinterval_t value,
+                                mulle_timeinterval_t rate)
 {
    mulle_timeinterval_t   loss;
    mulle_timeinterval_t   quantized;

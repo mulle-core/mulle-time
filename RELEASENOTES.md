@@ -1,3 +1,9 @@
+## 1.1.0
+
+* added `mulle_relativetime_get_timespec`
+* added `mulle_relativetime_sleep`
+
+
 # 1.0.0
 
 * make a clean division between calendar time and absolute time in terms of the process time

@@ -2,6 +2,7 @@
 #define mulle_timespec_h__
 
 #include "mulle-timetype.h"
+#include "mulle-relativetime.h"
 
 
 // use this for getting "date" "time"
@@ -31,7 +32,6 @@ static inline mulle_time_comparison_t   timespec_compare( struct timespec a,
    return( MulleTimeSame);
 }
 
-
 static inline struct timespec   timespec_add( struct timespec a,
                                               struct timespec b)
 {
@@ -60,5 +60,19 @@ static inline struct timespec   timespec_sub( struct timespec a,
    result.tv_sec = a.tv_sec - b.tv_sec - carry;
    return( result);
 }
+
+
+static inline struct timespec
+   mulle_relativetime_get_timespec( mulle_relativetime_t time)
+{
+   struct timespec   result;
+
+   result.tv_sec  = (unsigned long) time;
+   result.tv_nsec = (unsigned long) ((time - result.tv_sec) * (double) (1000L*1000*1000));
+
+   return( result);
+}
+
+void   mulle_relativetime_sleep( mulle_relativetime_t time);
 
 #endif

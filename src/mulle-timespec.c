@@ -2,6 +2,11 @@
 
 #include "mulle-timetype.h"
 
+#include "mulle-timespec.h"
+
+#include <errno.h>
+#include <assert.h>
+
 //
 // this could be an inline function as well, and the whole library a header
 // but due to the retarded way linux headers are super-restrictive by default
@@ -57,6 +62,46 @@ mulle_timeinterval_t   mulle_timeinterval_now_monotonic( void)
 
    clock_gettime( CLOCK_MONOTONIC, &now);
    return( now.tv_sec + now.tv_nsec / (1000.0*1000*1000));
+}
+
+
+//
+// maybe adopt this, if we run into problems with nanosleep
+//
+// void sleep_ms(int milliseconds)
+// {
+//     #ifdef WIN32
+//         Sleep(milliseconds); // Suspends the execution of the current thread until the time-out interval elapses.
+//     #elif _POSIX_C_SOURCE >= 199309L
+//         struct timespec ts;
+//         ts.tv_sec = milliseconds / 1000;
+//         ts.tv_nsec = (milliseconds % 1000) * 1000000;
+//         nanosleep(&ts, NULL); // nanosleep() suspends the execution of the calling thread
+//     #else
+//         usleep(milliseconds * 1000); // The usleep() function suspends execution of the calling thread
+//     #endif
+// }
+
+void   mulle_relativetime_sleep( mulle_relativetime_t time)
+{
+   struct timespec   delay;
+   struct timespec   remain;
+
+   if( time <= 0.0)
+      return;
+
+   delay = mulle_relativetime_get_timespec( time);
+
+restart:
+   if( nanosleep( &delay, &remain))
+   {
+      assert( errno == EINTR);
+      if( errno == EINTR && (remain.tv_sec > 0 || remain.tv_nsec > 500))
+      {
+         delay = remain;
+         goto restart;
+      }
+   }
 }
 
 #endif

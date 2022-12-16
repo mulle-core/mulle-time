@@ -1,6 +1,6 @@
-# 🕕 mulle-time
+# mulle-time
 
-#### Simple time types with arithmetic on timespec and timeval
+#### 🕕 Simple time types with arithmetic on timespec and timeval
 
 Defines `timespec_add`, `timespec_sub` and `timespec_compare` and their
 timeval counterparts. `struct timespec` is more desirable, where available,
@@ -25,15 +25,15 @@ or the date of "now + 0.1s".
 Caution: do not mix `mulle_calendartime_t` and `mulle_calendartime_t`
 
 
-Datatype                           | Description
------------------------------------|---------------------------
-`mulle_timeinterval_t`             | absolute or relative time stored as a `double`
-`mulle_absolutetime_t`             | a timestamp 
-`struct mulle_absolutetimerange`   | an absolute time range
-`mulle_calendartime_t`             | a date value like today
-`struct mulle_calendartimerange`   | an absolute date range, like today until tomorrow
-`mulle_relativetime_t`             | a quantity of time like 10s
-`struct mulle_relativetimerange`   | a time range of relative times, like delay, duration
+| Datatype                          | Description                                          |
+|-----------------------------------|------------------------------------------------------|
+| `mulle_timeinterval_t`            | absolute or relative time stored as a `double`       |
+| `mulle_absolutetime_t`            | a timestamp                                          |
+| `struct mulle_absolutetimerange`  | an absolute time range                               |
+| `mulle_calendartime_t`            | a date value like today                              |
+| `struct mulle_calendartimerange`  | an absolute date range, like today until tomorrow    |
+| `mulle_relativetime_t`            | a quantity of time like 10s                          |
+| `struct mulle_relativetimerange`  | a time range of relative times, like delay, duration |
 
 
 ### You are here

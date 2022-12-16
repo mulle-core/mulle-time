@@ -1,0 +1,16 @@
+{
+   "name" : "mulle-time",
+   "version" : "1.1.0",
+   "description" : "🕕 Simple time types with arithmetic on timespec and timeval",
+   "homepage" : "https://github.com/mulle-core/mulle-time",
+   "bugs" : "https://github.com/mulle-core/mulle-time/issues",
+   "keywords" : [],
+   "license" : "UNLICENSED",
+   "repository" : {
+      "type" : "git",
+      "url" : "mulle-core/mulle-time"
+   },
+   "dependencies" : {
+      "mulle-c11" : "git://github.com/mulle-c/mulle-c11"
+   }
+}

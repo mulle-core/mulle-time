@@ -8,7 +8,7 @@
    "license" : "UNLICENSED",
    "repository" : {
       "type" : "git",
-      "url" : "mulle-core/mulle-time"
+      "url" : "github:mulle-core/mulle-time"
    },
    "dependencies" : {
       "mulle-c11" : "git://github.com/mulle-c/mulle-c11"

@@ -1,0 +1,6 @@
+Defines `timespec_add`, `timespec_sub` and `timespec_compare` and their
+timeval counterparts. `struct timespec` is more desirable, where available,
+for improved precision in its representation.
+
+This library defines `mulle_timeinterval_t` which will be used as 
+`NSTimeInterval` in mulle-objc.

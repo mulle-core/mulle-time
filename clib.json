@@ -1,0 +1,21 @@
+{
+   "name" : "mulle-time",
+   "version" : "1.1.0",
+   "description" : "Simple time types with arithmetic on timespec and timeval",
+   "keywords" : [],
+   "license" : "BSD-3-Clause",
+   "repo" : "mulle-core/mulle-time",
+   "src" : [
+      "src/mulle-absolutetime.h",
+      "src/mulle-calendartime.h",
+      "src/mulle-relativetime.h",
+      "src/mulle-time.h",
+      "src/mulle-timespec.c",
+      "src/mulle-timespec.h",
+      "src/mulle-timetype.h",
+      "src/mulle-timeval.h"
+   ],
+   "dependencies" : {
+      "mulle-c/mulle-c11": "*"
+   }
+}

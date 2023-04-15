@@ -1,0 +1,23 @@
+{
+   project =
+   {
+      description="🕕 Simple time types with arithmetic on timespec and timeval";
+      domain="github";
+      name="mulle-time";
+      user="mulle-core";
+      repo="mulle-time";
+      homepage="https://github.com/mulle-core/mulle-time";
+      license="BSD-3-Clause"
+   };
+   dependencies =
+   (
+      {
+         description="🔀 Cross-platform C compiler glue (and some cpp conveniences)";
+         domain="github";
+         name="mulle-c11";
+         repo="mulle-c11";
+         url="https://github.com/mulle-c/mulle-c11";
+         user="mulle-c";
+      }
+   )
+}

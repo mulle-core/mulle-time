@@ -1,3 +1,7 @@
+### 1.1.1
+
+* remove package.json as it conflicts with clib.json
+
 ## 1.1.0
 
 * added `mulle_relativetime_get_timespec`

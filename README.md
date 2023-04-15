@@ -9,6 +9,13 @@ for improved precision in its representation.
 This library defines `mulle_timeinterval_t` which will be used as 
 `NSTimeInterval` in mulle-objc.
 
+| Release Version                                       | Release Notes
+|-------------------------------------------------------|--------------
+| ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-core/mulle-time.svg?branch=release) [![Build Status](https://github.com/mulle-core/mulle-time/workflows/CI/badge.svg?branch=release)](//github.com/mulle-core/mulle-time/actions)| [RELEASENOTES](RELEASENOTES.md) |
+
+
+
+
 On Linux this library implicitly defines `_GNU_SOURCE` to get the 
 `CLOCK_REALTIME` and `CLOCK_MONOTONIC` constants.
 
@@ -36,9 +43,7 @@ Caution: do not mix `mulle_calendartime_t` and `mulle_calendartime_t`
 | `struct mulle_relativetimerange`  | a time range of relative times, like delay, duration |
 
 
-### You are here
 
-![Overview](overview.dot.svg)
 
 
 ## Add
@@ -46,15 +51,25 @@ Caution: do not mix `mulle_calendartime_t` and `mulle_calendartime_t`
 Use [mulle-sde](//github.com/mulle-sde) to add mulle-time to your project:
 
 ``` sh
-mulle-sde dependency add --c --github mulle-core mulle-time
+mulle-sde add github:mulle-core/mulle-time
 ```
+
+To only add the sources of mulle-time with dependency
+sources use [clib](https://github.com/clibs/clib):
+
+
+``` sh
+clib install --out src/mulle-core mulle-core/mulle-time
+```
+
+Add `-isystem src/mulle-core` to your `CFLAGS` and compile all the sources that were downloaded with your project.
+
 
 ## Install
 
-### mulle-sde
+### Install with mulle-sde
 
-Use [mulle-sde](//github.com/mulle-sde) to build and install mulle-time
-and all its dependencies:
+Use [mulle-sde](//github.com/mulle-sde) to build and install mulle-time and all dependencies:
 
 ``` sh
 mulle-sde install --prefix /usr/local \
@@ -63,8 +78,13 @@ mulle-sde install --prefix /usr/local \
 
 ### Manual Installation
 
+Install the requirements:
 
-Install into `/usr/local`:
+| Requirements                                 | Description
+|----------------------------------------------|-----------------------
+| [mulle-c11](https://github.com/mulle-c/mulle-c11)             | 🔀 Cross-platform C compiler glue (and some cpp conveniences)
+
+Install **mulle-time** into `/usr/local` with [cmake](https://cmake.org):
 
 ``` sh
 cmake -B build \
@@ -75,7 +95,8 @@ cmake --build build --config Release &&
 cmake --install build --config Release
 ```
 
-### Steal
+## Author
 
-Read [STEAL.md](//github.com/mulle-c11/dox/STEAL.md) on how to steal the
-source code and incorporate it in your own projects.
+[Nat!](https://mulle-kybernetik.com/weblog) for Mulle kybernetiK
+
+

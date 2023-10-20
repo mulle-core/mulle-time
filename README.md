@@ -91,6 +91,8 @@ Install the requirements:
 |----------------------------------------------|-----------------------
 | [mulle-c11](https://github.com/mulle-c/mulle-c11)             | 🔀 Cross-platform C compiler glue (and some cpp conveniences)
 
+Download the latest [tar](https://github.com/mulle-core/mulle-time/archive/refs/tags/latest.tar.gz) or [zip](https://github.com/mulle-core/mulle-time/archive/refs/tags/latest.zip) archive and unpack it.
+
 Install **mulle-time** into `/usr/local` with [cmake](https://cmake.org):
 
 ``` sh

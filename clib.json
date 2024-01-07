@@ -8,6 +8,7 @@
    "src" : [
       "src/mulle-absolutetime.h",
       "src/mulle-calendartime.h",
+      "src/mulle-relativetime.c",
       "src/mulle-relativetime.h",
       "src/mulle-time.h",
       "src/mulle-timespec.c",

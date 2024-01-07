@@ -1,3 +1,7 @@
+### 1.1.2
+
+* new function `mulle_relativetime_now,` which is somewhat experimental
+
 ### 1.1.1
 
 * remove package.json as it conflicts with clib.json

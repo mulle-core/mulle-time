@@ -1,3 +1,9 @@
+## 1.2.0
+
+* use preferably make verb for creation of structs now instead of init
+* added `timespec_make_with_relativetime` (though the lack of prefixing hurst me now, while I commit this)
+
+
 ### 1.1.2
 
 * new function `mulle_relativetime_now,` which is somewhat experimental

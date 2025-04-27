@@ -1,3 +1,7 @@
+### 1.2.1
+
+Various small improvements
+
 ## 1.2.0
 
 * use preferably make verb for creation of structs now instead of init

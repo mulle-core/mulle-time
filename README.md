@@ -11,9 +11,9 @@ This library defines `mulle_timeinterval_t` which will be used as
 
 
 
-| Release Version                                       | Release Notes
-|-------------------------------------------------------|--------------
-| ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-core/mulle-time.svg) [![Build Status](https://github.com/mulle-core/mulle-time/workflows/CI/badge.svg)](//github.com/mulle-core/mulle-time/actions) | [RELEASENOTES](RELEASENOTES.md) |
+| Release Version                                       | Release Notes  | AI Documentation
+|-------------------------------------------------------|----------------|---------------
+| ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-core/mulle-time.svg) [![Build Status](https://github.com/mulle-core/mulle-time/workflows/CI/badge.svg)](//github.com/mulle-core/mulle-time/actions) | [RELEASENOTES](RELEASENOTES.md) | [DeepWiki for mulle-time](https://deepwiki.com/mulle-core/mulle-time)
 
 
 

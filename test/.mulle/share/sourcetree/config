@@ -1,1 +1,1 @@
-mulle-time;${MULLE__TIME_NODETYPE:-tar};;63ACB11F-B572-4F79-956D-557E50387E9D;${MULLE__TIME_URL:-https://github.com/nat/mulle-time/archive/${MULLE_TAG}.tar.gz};${MULLE__TIME_BRANCH};${MULLE__TIME_TAG:-latest};;
+mulle-time;${MULLE__TIME_NODETYPE:-tar};;EF67422A-C1DA-4CB2-89BA-B58487D45BCB;${MULLE__TIME_URL:-https://github.com/mulle-nat/mulle-time/archive/${MULLE_TAG}.tar.gz};${MULLE__TIME_BRANCH};${MULLE__TIME_TAG:-latest};;

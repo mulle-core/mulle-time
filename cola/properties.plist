@@ -8,6 +8,7 @@
       repo="mulle-time";
       homepage="https://github.com/mulle-core/mulle-time";
       license="BSD-3-Clause";
+      version="1.2.2";
    };
    dependencies =
    (

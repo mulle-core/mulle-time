@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.13...99.99)
 
-project( mulle-time VERSION 1.2.1 LANGUAGES C)
+project( mulle-time VERSION 1.2.2 LANGUAGES C)
 
 
 #

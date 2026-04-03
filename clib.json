@@ -6,6 +6,9 @@
    "license" : "BSD-3-Clause",
    "repo" : "mulle-core/mulle-time",
    "src" : [
+      "asset/dox/TOC.md",
+      "src/generic/include-private.h",
+      "src/generic/include.h",
       "src/mulle-absolutetime.h",
       "src/mulle-calendartime.h",
       "src/mulle-relativetime.c",
@@ -14,7 +17,10 @@
       "src/mulle-timespec.c",
       "src/mulle-timespec.h",
       "src/mulle-timetype.h",
-      "src/mulle-timeval.h"
+      "src/mulle-timeval.h",
+      "src/reflect/_mulle-time-include-private.h",
+      "src/reflect/_mulle-time-include.h",
+      "src/reflect/_mulle-time-provide.h"
    ],
    "dependencies" : {
       "mulle-c/mulle-c11": "*"

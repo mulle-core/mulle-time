@@ -1,1 +1,1 @@
-mulle-time;${MULLE__TIME_NODETYPE:-tar};no-link,singlephase;20B1E080-507E-487F-84B9-51F074495717;${MULLE__TIME_URL:-https://github.com/mulle-core/mulle-time/archive/${MULLE_TAG}.tar.gz};${MULLE__TIME_BRANCH};${MULLE__TIME_TAG:-latest};;
+mulle-time;${MULLE__TIME_NODETYPE:-tar};;20B1E080-507E-487F-84B9-51F074495717;${MULLE__TIME_URL:-https://github.com/mulle-core/mulle-time/archive/${MULLE_TAG}.tar.gz};${MULLE__TIME_BRANCH};${MULLE__TIME_TAG:-latest};;

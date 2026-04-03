@@ -8,6 +8,7 @@
 
 int   main( int argc, char *argv[])
 {
+#ifndef _WIN32
    struct timeval   a;
    struct timeval   b;
    struct timeval   c;
@@ -19,5 +20,6 @@ int   main( int argc, char *argv[])
 
    c = timeval_add( a, b);
    printf( "%lld.%lld\n", (long long) c.tv_sec, (long long) c.tv_usec);
+#endif
    return( 0);
 }

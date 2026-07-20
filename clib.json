@@ -1,6 +1,6 @@
 {
    "name" : "mulle-time",
-   "version" : "1.3.0",
+   "version" : "1.3.1",
    "description" : "🕕 Simple time types with arithmetic on timespec and timeval",
    "keywords" : [],
    "license" : "BSD-3-Clause",

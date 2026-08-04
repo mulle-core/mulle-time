@@ -18,6 +18,11 @@ This library defines `mulle_timeinterval_t` which will be used as
 
 
 
+## Documentation & Guides
+
+* [API Summary](asset/dox/api/toc)
+
+
 
 On Linux this library implicitly defines `_GNU_SOURCE` to get the 
 `CLOCK_REALTIME` and `CLOCK_MONOTONIC` constants.

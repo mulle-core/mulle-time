@@ -11,7 +11,7 @@ These added types are mostly there to make code more readable, so that you
 immediately know if a `mulle_timeinterval_t` contains, say a delay of 0.1s
 or the date of "now + 0.1s".
 
-Caution: do not mix `mulle_calendartime_t` and `mulle_calendartime_t`
+Caution: do not mix `mulle_calendartime_t` and `mulle_absolutetime_t`
 
 
 | Datatype                          | Description                                          |

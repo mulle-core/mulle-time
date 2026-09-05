@@ -36,7 +36,6 @@ src/generic/include-private.h
 set( PUBLIC_GENERATED_HEADERS
 src/reflect/_mulle-time-include.h
 src/reflect/_mulle-time-provide.h
-src/reflect/_mulle-time-versioncheck.h
 )
 
 #

@@ -24,10 +24,8 @@ This library defines `mulle_timeinterval_t` which will be used as
 
 
 
-On Linux the `mulle-timetype.h` header defines `_GNU_SOURCE`, unless glibc's
-feature detection has already run, to get the `CLOCK_REALTIME` and
-`CLOCK_MONOTONIC` constants. Include `mulle-time.h` before any other system
-header if you rely on this.
+On Linux this library implicitly defines `_GNU_SOURCE` to get the 
+`CLOCK_REALTIME` and `CLOCK_MONOTONIC` constants.
 
 This library also defines these types based on `mulle_timeinterval_t`.
 
@@ -37,28 +35,9 @@ This library also defines these types based on `mulle_timeinterval_t`.
 
 These added types are mostly there to make code more readable, so that you
 immediately know if a `mulle_timeinterval_t` contains, say a delay of 0.1s
-or the date of "now + 0.1s". They are semantic aliases only — each is a
-`typedef` of `mulle_timeinterval_t` (a `double`), so the compiler cannot
-distinguish them; the domain separation is a naming convention.
+or the date of "now + 0.1s".
 
 Caution: do not mix `mulle_calendartime_t` and `mulle_absolutetime_t`
-
-### Conventions
-
-* **Epoch** — `mulle_calendartime_t` and `mulle_timeinterval_now` use the
-  Unix epoch (1970-01-01T00:00:00Z); `mulle_absolutetime_t` is relative to
-  system boot; `mulle_relativetime_t` is a duration.
-* **Suspend** — `mulle_absolutetime_t` is monotonic while the process runs.
-  On POSIX it is based on `CLOCK_MONOTONIC` (typically excludes suspend); on
-  Windows it is based on `QueryPerformanceCounter` (hardware dependent). Do
-  not rely on it counting elapsed wall-clock time across a suspend/resume.
-* **Precision** — all typed values are `double` seconds. The double
-  representation loses sub-microsecond precision at large magnitudes; prefer
-  `struct timespec` for storage and ordering where nanoseconds matter at
-  large values.
-* **Negative relative times** — legal; the API does not reject them, callers
-  define their meaning. `mulle_relativetime_sleep` returns immediately for
-  `time <= 0`.
 
 
 | Datatype                          | Description                                          |
@@ -83,29 +62,40 @@ Caution: do not mix `mulle_calendartime_t` and `mulle_absolutetime_t`
 
 ## Add
 
-**This project is a component of the [mulle-core](//github.com/mulle-core/mulle-core) library. As such you usually will *not* add or install it
-individually, unless you specifically do not want to link against
-`mulle-core`.**
+mulle-time is a component of the [mulle-core](//github.com/mulle-core/mulle-core) library. So in your code include the mulle-core umbrella header:
 
-
-### Add as an individual component
-
-Use [mulle-sde](//github.com/mulle-sde) to add mulle-time to your project:
-
-``` sh
-mulle-sde add github:mulle-core/mulle-time
+``` c
+#include <mulle-core/mulle-core.h>
 ```
 
-To only add the sources of mulle-time with dependency
-sources use [clib](https://github.com/clibs/clib):
+### Add mulle-core to a cmake and git project
 
-
-``` sh
-clib install --out src/mulle-core mulle-core/mulle-time
+``` bash
+git submodule add https://github.com/mulle-core/mulle-core.git mulle-core
 ```
 
-Add `-isystem src/mulle-core` to your `CFLAGS` and compile all the sources that were downloaded with your project.
+Add this to your `CMakeLists.txt`:
 
+``` cmake
+add_subdirectory( mulle-core)
+target_link_libraries( ${PROJECT_NAME} PRIVATE mulle-core)
+```
+
+
+### Add mulle-core to a mulle-sde project
+
+``` sh
+mulle-sde add github:mulle-core/mulle-core
+```
+
+### Embed mulle-time with clib
+
+``` sh
+clib install --out src mulle-core/mulle-time
+```
+
+Append `src` to your include path (e.g. add `-isystem src`  to your `CFLAGS`)
+and compile all the sources that were downloaded.
 
 ## Install
 

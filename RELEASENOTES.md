@@ -1,3 +1,7 @@
+### 1.3.3
+
+Various small improvements
+
 ### 1.3.2
 
 
